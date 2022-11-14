@@ -6,10 +6,6 @@ import response
 import argparse
 import netaddr
 
-parser = argparse.ArgumentParser(
-                    prog = 'Pypinger',
-                    description = 'This pings hosts to see if they are up or down.',
-                    epilog = 'Specify the filename and it pings. Check requirements.txt if issues.')
 '''
 Examples:
 ./main.py -t csv -f ipam <-- csv file named ipam (column named ipAddress w/ ips)
@@ -17,7 +13,12 @@ Examples:
 ./main.py -t ip -i 10.1.1.1 <-- pings 10.1.1.1
 ./main.py -t txt -f ip <-- txt file named ip (one per line)
 '''
-# csv args
+
+parser = argparse.ArgumentParser(
+                    prog = 'Pypinger',
+                    description = 'This pings hosts to see if they are up or down.',
+                    epilog = 'Specify the filename and it pings. Check requirements.txt if issues.')
+
 parser.add_argument('-f','--filename')
 parser.add_argument('-t', '--type', required=True)
 parser.add_argument('-i', '--ipaddress')
